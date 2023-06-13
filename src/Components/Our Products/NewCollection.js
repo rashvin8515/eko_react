@@ -42,18 +42,16 @@ export default function NewCollection() {
   const renderProductCards = (filteredProducts) => {
     return filteredProducts.map((product) => (
       <div className="item" key={product.id}>
-        <div className="card product-card">
-          {/* Rest of the ProductCard component code */}
-          <ProductCard
-            id={product.id}
-            imgBackSrc={`assets/images/${product.pictures[0]}`}
-            imgFrontSrc={`assets/images/${product.pictures[1]}`}
-            title={product.name}
-            price={product.salePrice}
-            actualPrice={product.price}
-            rating={product.rating}
-          />
-        </div>
+        {/* Rest of the ProductCard component code */}
+        <ProductCard
+          id={product.id}
+          imgBackSrc={`assets/images/${product.pictures[0]}`}
+          imgFrontSrc={`assets/images/${product.pictures[1]}`}
+          title={product.name}
+          price={product.salePrice}
+          actualPrice={product.price}
+          rating={product.rating}
+        />
       </div>
     ));
   };
@@ -72,45 +70,45 @@ export default function NewCollection() {
                   </div>
                 </Col>
                 <Col lg="6" className="text-lg-right mt-4 mt-lg-0">
-                <Nav tabs className="flex-column flex-lg-row">
-        <NavItem>
-          <NavLink
-            className={classnames({ active: activeTab === '1' })}
-            onClick={() => {
-              toggle('1');
-            }}
-          >
-            Latest Products
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink
-            className={classnames({ active: activeTab === '2' })}
-            onClick={() => {
-              toggle('2');
-            }}
-          >
-            Best Seller
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink
-            className={classnames({ active: activeTab === '3' })}
-            onClick={() => {
-              toggle('3');
-            }}
-          >
-            Featured Products
-          </NavLink>
-        </NavItem>
-      </Nav>
+                  <Nav tabs className="flex-column flex-lg-row">
+                    <NavItem>
+                      <NavLink
+                        className={classnames({ active: activeTab === '1' })}
+                        onClick={() => {
+                          toggle('1');
+                        }}
+                      >
+                        Latest Products
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        className={classnames({ active: activeTab === '2' })}
+                        onClick={() => {
+                          toggle('2');
+                        }}
+                      >
+                        Best Seller
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        className={classnames({ active: activeTab === '3' })}
+                        onClick={() => {
+                          toggle('3');
+                        }}
+                      >
+                        Featured Products
+                      </NavLink>
+                    </NavItem>
+                  </Nav>
                 </Col>
               </Row>
               <Row>
                 <Col>
                   <TabContent activeTab={activeTab} className="tab-content">
                     <TabPane tabId="1" className="">
-                      
+
                       <OwlCarousel
                         className="owl-carousel no-pb owl-2"
                         dots={false}
@@ -122,13 +120,13 @@ export default function NewCollection() {
                           768: { items: 2 },
                           992: { items: 3 },
                         }}
-                        
+
                       >
                         {filterProducts()}
                       </OwlCarousel>
                     </TabPane>
                     <TabPane tabId="2" className=" ">
-                    <OwlCarousel
+                      <OwlCarousel
                         className="owl-carousel no-pb owl-2"
                         dots={false}
                         nav={true}
@@ -139,13 +137,13 @@ export default function NewCollection() {
                           768: { items: 2 },
                           992: { items: 3 },
                         }}
-                        
+
                       >
                         {filterProducts()}
                       </OwlCarousel>
                     </TabPane>
                     <TabPane tabId="3" className="">
-                    <OwlCarousel
+                      <OwlCarousel
                         className="owl-carousel no-pb owl-2"
                         dots={false}
                         nav={true}
@@ -156,7 +154,7 @@ export default function NewCollection() {
                           768: { items: 2 },
                           992: { items: 3 },
                         }}
-                        
+
                       >
                         {filterProducts()}
                       </OwlCarousel>

@@ -5,7 +5,7 @@ const comments = [
     date: "30 October, 2022",
     content:
       "Donec viverra sodales arcu gravida nibh at. Neque lobortis quis porta integer et placerat lectus scelerisque. Velit eget malesuada morbi faucibus at sed euismod. Tortor, eu ut id tincidunt leo placerat luctus",
-    imageSrc: "images/thumbnail/01.jpg",
+    imageSrc: "assets/images/thumbnail/01.jpg",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const comments = [
     date: "30 October, 2022",
     content:
       "Donec viverra sodales arcu gravida nibh at. Neque lobortis quis porta integer et placerat lectus scelerisque. Velit eget malesuada morbi faucibus at sed euismod. Tortor, eu ut id tincidunt leo placerat luctus",
-    imageSrc: "images/thumbnail/02.jpg",
+    imageSrc: "assets/images/thumbnail/02.jpg",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const comments = [
     date: "30 October, 2022",
     content:
       "Donec viverra sodales arcu gravida nibh at. Neque lobortis quis porta integer et placerat lectus scelerisque. Velit eget malesuada morbi faucibus at sed euismod. Tortor, eu ut id tincidunt leo placerat luctus",
-    imageSrc: "images/thumbnail/03.jpg",
+    imageSrc: "assets/images/thumbnail/03.jpg",
   },
 ];
 export default comments;

@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import BlogCard from "./BlogCard";
 import { useSelector } from "react-redux";
 
-const BlogSection = ({blogs,title}) => {
+const BlogSection = ({ blogs, title }) => {
   // const blogs = useSelector(
   //   (state) => state.blog.blogItems
   // );
@@ -35,7 +35,7 @@ const BlogSection = ({blogs,title}) => {
         </Row>
         <Row className="justify-content-center text-center mt-5">
           <Col>
-            <a className="btn btn-dark" href="blog-card.html">
+            <a className="btn btn-dark" href="blog-card">
               View All Blog
             </a>
           </Col>

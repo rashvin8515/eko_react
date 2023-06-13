@@ -5,13 +5,13 @@ import { useSelector } from "react-redux/es";
 function ProductIndex() {
   const trendingproducts = useSelector(
     (state) => state.products.allProducts
-  );
+  ).slice(0, 8);
   console.log(trendingproducts);
-  const sortedProducts = trendingproducts.sort((a, b) => b.rating - a.rating);
-  
-  // Select the first 8 products with highest ratings
-  const topRatedProducts = sortedProducts.slice(0, 8);
-  console.log(topRatedProducts);
+  // const sortedProducts = trendingproducts.sort((a, b) => b.rating - a.rating);
+
+  // // Select the first 8 products with highest ratings
+  // const topRatedProducts = sortedProducts.slice(0, 8);
+  // console.log(topRatedProducts);
   return (
     <>
       <section>
@@ -25,21 +25,21 @@ function ProductIndex() {
             </div>
           </div>
           <div class="row">
-          
-            {topRatedProducts.map((product) => (
-              
-            <div class="col-xl-3 col-lg-4 col-md-6" key={product.id}>
-            <ProductCard
-                id={product.id}
-                imgBackSrc={`assets/images/${product.pictures[0]}`}
-                imgFrontSrc={`assets/images/${product.pictures[1]}`}
-                title={product.name}
-                price={product.salePrice}
-                actualPrice={product.price}
-                rating={product.rating}
-              />
-            </div>
-          ))}
+
+            {trendingproducts.map((product) => (
+
+              <div class="col-xl-3 col-lg-4 col-md-6" key={product.id}>
+                <ProductCard
+                  id={product.id}
+                  imgBackSrc={`assets/images/${product.pictures[0]}`}
+                  imgFrontSrc={`assets/images/${product.pictures[1]}`}
+                  title={product.name}
+                  price={product.salePrice}
+                  actualPrice={product.price}
+                  rating={product.rating}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

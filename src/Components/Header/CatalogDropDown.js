@@ -16,35 +16,35 @@ function CatalogDropDown({ title, catalogoryLinks }) {
                   <div class="mb-3 font-weight-bold">Clothing</div>
                   <ul class="list-unstyled mb-6 mb-md-0">
                     <li>
-                      <Link to="shop-grid-left-sidebar.html">All Clothing</Link>
+                      <Link to="shop-grid-left-sidebar">All Clothing</Link>
                     </li>
                     <li>
-                      <Link to="shop-grid-left-sidebar.html">
+                      <Link to="shop-grid-left-sidebar">
                         Top, T-Shirts & Shirts
                       </Link>
                     </li>
                     <li>
-                      <Link to="shop-grid-left-sidebar.html">
+                      <Link to="shop-grid-left-sidebar">
                         Lingerie & Sleepwear
                       </Link>
                     </li>
                     <li>
-                      <Link to="shop-grid-left-sidebar.html">
+                      <Link to="shop-grid-left-sidebar">
                         Leggings & Jeggings
                       </Link>
                     </li>
                     <li>
-                      <Link to="shop-grid-left-sidebar.html">
+                      <Link to="shop-grid-left-sidebar">
                         Kurtas & Kurtis
                       </Link>
                     </li>
                     <li>
-                      <Link to="shop-grid-left-sidebar.html">
+                      <Link to="shop-grid-left-sidebar">
                         Dresses & Skirts
                       </Link>
                     </li>
                     <li>
-                      <Link to="shop-grid-left-sidebar.html">
+                      <Link to="shop-grid-left-sidebar">
                         {" "}
                         Jumpers & Cardigans{" "}
                       </Link>
@@ -84,7 +84,7 @@ function CatalogDropDown({ title, catalogoryLinks }) {
                   <ul class="list-unstyled mb-0">
                     <li>
                       {" "}
-                      <Link to="shop-grid-left-sidebar.html">
+                      <Link to="shop-grid-left-sidebar">
                         All Bags & Accessories
                       </Link>
                     </li>

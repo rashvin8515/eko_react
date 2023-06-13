@@ -37,8 +37,6 @@ function SideBar() {
     });
     return uniqueTags;
   }, []);
-console.log(tags);  
-  console.log(categories);
   const colors = allProducts.reduce((uniqueColors, product) => {
     product.colors.forEach((color) => {
       const colorLowerCase = color.toLowerCase();
@@ -72,7 +70,7 @@ console.log(tags);
   };
   // const handleTagClick = (tag) => {
   //   const { filters, dispatch } = yourComponent; // Replace "yourComponent" with the appropriate variable representing your component
-  
+
   //   const index = filters.tags.indexOf(tag);
   //   if (index === -1) {
   //     dispatch(setFilters({ ...filters, tags: [...filters.tags, tag] }));
@@ -82,7 +80,7 @@ console.log(tags);
   //     dispatch(setFilters({ ...filters, tags: updatedTags }));
   //   }
   // };
-  
+
   const handleColorClick = (color) => {
     setSelectedColor(color);
     dispatch(setFilters({ ...filters, colors: color }));
@@ -98,145 +96,108 @@ console.log(tags);
   };
   useEffect(() => {
     dispatch(filterProducts());
-    console.log("filters sidebar", filters);
   }, [filters]);
 
   return (
-      <div className="p-5 py-5 rounded-4 border border-light">
-        <div className="pb-4 mb-4 mb-4 border-bottom border-light">
-          <Button
-            style={{ width: "65px", height: "30px" }}
-            onClick={() => {
-              dispatch(resetFilters());
-            }}
-            className="bg-transparent p-0 text-dark"
-          >
-            Reset
-          </Button>
-        </div>
-        <div className=" mb-4 pb-4 border-light">
-          <h4 className=" mb-3">Categories</h4>
-          {categories.map((category) => (
-            <div className="form-check mb-2">
-              <input
-                id={category}
-                type="checkbox"
-                className="form-check-input"
-                style={{opacity: 1,background: 'none',pointerEvents: 'auto'}}
-                value={category}
-                checked={
-                  filters.category.includes(category) ? true : false
-                }
-                onClick={() => handleCategoryClick(category)}
-              />
-              <label className="form-check-label" style={{background: 'none'}} key={category}>
-                {category}
-              </label>
-            </div>
-          ))}
-        </div>
-        
-        <div className="mb-4 pb-4 border-bottom">
-          <h4 className="mb-3">Price</h4>
-          <button
-            className="border-0 p-0 bg-transparent btn-link"
-            onClick={() => resetPriceFilter()}
-          >
-            clear
-          </button>
-          <div className="price_slider_wrapper">
-            <Slider
-              range
-              min={0}
-              max={10000}
-              defaultValue={filters.prices}
-              onChange={(value) => handlePriceChange(value)}
+    <div className="p-5 py-5 rounded-4 border border-light">
+      <div className="pb-4 mb-4 mb-4 border-bottom border-light">
+        <Button
+          style={{ width: "65px", height: "30px" }}
+          onClick={() => {
+            dispatch(resetFilters());
+          }}
+          className="bg-transparent p-0 text-dark"
+        >
+          Reset
+        </Button>
+      </div>
+      <div className=" mb-4 pb-4 border-light">
+        <h4 className=" mb-3">Categories</h4>
+        {categories.map((category) => (
+          <div className="form-check mb-2">
+            <input
+              id={category}
+              type="checkbox"
+              className="form-check-input"
+              style={{ opacity: 1, background: 'none', pointerEvents: 'auto' }}
+              value={category}
+              checked={
+                filters.category.includes(category) ? true : false
+              }
+              onClick={() => handleCategoryClick(category)}
             />
+            <label className="form-check-label" style={{ background: 'none' }} key={category}>
+              {category}
+            </label>
           </div>
-        </div>
-        <div className="mb-4 pb-4 border-bottom border-light">
-          <h4 className="mb-3">Color</h4>
-          <ul
-            className="list-inline"
-            style={{
-              display: "grid",
-              justifyContent: "center",
-              gridTemplateColumns: "repeat(auto-fill, minmax(40px, 1fr))",
-              gridGap: "10px",
-            }}
-          >
-            {colors.map((color) => (
-              <li>
-                <div className="form-check ">
-                  <input
-                    type="radio"
-                    value={color}
-                    className="form-check-input"
-                    id={color}
-                    style={{
-                      background: color,
-                      width: "24px",
-                      height: "24px",
-                      border:
-                        filters.colors === color
-                          ? "4px solid red" // Use red border if filters.colors matches with color
-                          : "4px solid #ccc", // Use default gray border otherwise
-                      paddingLeft: "2px",
-                      borderRadius: "0",
-                      position: 'relative'
-                    }}
-                    checked={filters.colors === color}
-                    onChange={() => handleColorClick(color)}
-                  />
-                </div>
-                <small style={{textTransform: 'capitalize'}}>{color}</small>
-              </li>
-            ))}
-            
-          </ul>
-        </div>
-        <div className="mb-4 pb-4 border-bottom border-light widget-size">
-          <h4 className=" mb-3">Size</h4>
-          <div
-            className="pl-0"
-            style={{
-              display: "grid",
-              justifyContent: "center",
-              // height: "40px",
-              gridTemplateColumns: "repeat(5, 1fr)", // show 4 items in one row
+        ))}
+      </div>
 
-              //gridAutoFlow: "column",
-              paddingBottom: "5px",
-              gap: "5px",
-            }}
-          >
-            {sizes.map((size, index) => (
-              <li key={index}>
-                <input
-                  name="size"
-                  id={size.toLowerCase() + "-size"}
-                  type="radio"
-                  className="form-check-input"
-                  checked={filters.size === size}
-                  style={{ display: "none" }}
-                  onChange={() => handleSizeClick(size)}
-                />
-                <label
-                  htmlFor={size.toLowerCase() + "-size"}
-                  style={{
-                    border: "2px solid #ddd",
-                    borderRadius: "5px",
-                    //padding: "5px 15px",
-                    cursor: "pointer",
-                  }}
-                >
-                  {size}
-                </label>
-              </li>
-            ))}
-          </div>
+      <div className="mb-4 pb-4 border-bottom">
+        <h4 className="mb-3">Price</h4>
+        <button
+          className="border-0 p-0 bg-transparent btn-link"
+          onClick={() => resetPriceFilter()}
+        >
+          clear
+        </button>
+        <div className="price_slider_wrapper">
+          <Slider
+            range
+            min={0}
+            max={10000}
+            defaultValue={filters.prices}
+            onChange={(value) => handlePriceChange(value)}
+          />
         </div>
       </div>
+      <div className="mb-4 pb-4 border-bottom border-light">
+        <h4 className="mb-3">Color</h4>
+        <ul
+          className="list-inline"
+          style={{
+            display: "grid",
+            justifyContent: "center",
+            gridTemplateColumns: "repeat(auto-fill, minmax(40px, 1fr))",
+            gridGap: "10px",
+          }}
+        >
+          {colors.map((col, index) => (
+            <li key={index} className="form-check pl-0">
+              <div className="form-check pl-0">
+                <input type="checkbox" value={col} checked={filters.colors === col} onChange={() => handleColorClick(col)} className="form-check-input" id={col} />
+                <label className="form-check-label" style={{ background: col }} htmlFor={col} />
+              </div><small>{col}</small>
+            </li>
+          ))}
+
+        </ul>
+      </div>
+      <div className="mb-4 pb-4 border-bottom border-light widget-size">
+        <h4 className=" mb-3">Size</h4>
+        <div
+          className="pl-0"
+          style={{
+            display: "grid",
+            justifyContent: "center",
+            // height: "40px",
+            gridTemplateColumns: "repeat(5, 1fr)", // show 4 items in one row
+
+            //gridAutoFlow: "column",
+            paddingBottom: "5px",
+            gap: "5px",
+          }}
+        >
+          {sizes.map((size, index) => (
+
+            < li key={index} >
+              <input name="sc" type="checkbox" onChange={() => handleSizeClick(size)} checked={filters.size === size} value={size} id={size} />
+              <label htmlFor={size}>{size}</label>
+            </li>
+          ))}
+        </div>
+      </div>
+    </div >
   );
 }
 

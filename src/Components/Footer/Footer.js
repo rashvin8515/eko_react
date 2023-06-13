@@ -51,32 +51,32 @@ export default function Footer() {
                   <h5 class="mb-4 text-white">Quick Links</h5>
                   <ul class="navbar-nav list-unstyled mb-0">
                     <li class="mb-3 nav-item">
-                      <a class="nav-link" href="index.html">
+                      <a class="nav-link" href="/">
                         Home
                       </a>
                     </li>
                     <li class="mb-3 nav-item">
-                      <a class="nav-link" href="about-us-1.html">
+                      <a class="nav-link" href="about-us">
                         About
                       </a>
                     </li>
                     <li class="mb-3 nav-item">
-                      <a class="nav-link" href="product-grid.html">
+                      <a class="nav-link" href="shop-grid-left-sidebar">
                         Shop
                       </a>
                     </li>
                     <li class="mb-3 nav-item">
-                      <a class="nav-link" href="faq.html">
+                      <a class="nav-link" href="faq">
                         Faq
                       </a>
                     </li>
                     <li class="mb-3 nav-item">
-                      <a class="nav-link" href="blog-card.html">
+                      <a class="nav-link" href="blog-card">
                         Blogs
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="contact-us.html">
+                      <a class="nav-link" href="contact-us">
                         Contact Us
                       </a>
                     </li>
@@ -126,12 +126,12 @@ export default function Footer() {
                   <h5 class="mb-4 text-white">Features</h5>
                   <ul class="navbar-nav list-unstyled mb-0">
                     <li class="mb-3 nav-item">
-                      <a class="nav-link" href="terms-and-conditions.html">
+                      <a class="nav-link" href="terms-and-conditions">
                         Term Of Service
                       </a>
                     </li>
                     <li class="mb-3 nav-item">
-                      <a class="nav-link" href="privacy-policy.html">
+                      <a class="nav-link" href="privacy-policy">
                         Privacy Policy
                       </a>
                     </li>
@@ -179,10 +179,9 @@ export default function Footer() {
                 </div>
                 <div>
                   <h6 class="mb-1 text-light">Email Us</h6>
-                  <a class="text-muted" href="mailto:themeht23@gmail.com">
+                  <a class="text-muted" href="mailto:skytouchinfotech01@gmail.com">
                     {" "}
-                    themeht23@gmail.com
-                  </a>
+                    skytouchinfotech01@gmail.com                  </a>
                 </div>
               </div>
               <div class="d-flex mb-3">
@@ -216,7 +215,7 @@ export default function Footer() {
               <i class="lar la-heart text-primary heartBeat2"></i>{" "}
               <u>
                 <a class="text-primary" href="#">
-                  ThemeHt
+                  SkyTouch Infotech
                 </a>
               </u>
             </div>

@@ -30,27 +30,10 @@ const Banner = () => {
   return (
     <div>
       <OwlCarousel
-        className="owl-theme"
+        className="banner-slider owl-carousel no-pb owl-2"
         {...options}
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          "$ .owl-carousel .owl-nav": {
-            position: "absolute",
-            top: "50%",
-            width: "100%",
-            transform: "translateY(-50%)",
-          },
-          "$ .owl-carousel .owl-prev": {
-            left: 0,
-          },
-          "$ .owl-carousel .owl-next": {
-            right: 0,
-          },
-          "$ .owl-carousel .owl-prev, $ .owl-carousel .owl-next": {
-            "!important": true,
-          },
-        }}
+        navText={["<span class='las la-arrow-left'><span></span></span>", "<span class='las la-arrow-right'><span></span></span>"]}
+
       >
         {slides.map((slide, index) => (
           <div

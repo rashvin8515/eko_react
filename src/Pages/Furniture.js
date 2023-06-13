@@ -14,7 +14,7 @@ function Index5() {
     (state) => state.blog.blogItems
   );
   const filteredBlogs = blogs.filter(
-    (blog) => blog.category.includes("Modern") 
+    (blog) => blog.category.includes("Modern")
   );
   const logos = [
     "assets/images/client/01.png",
@@ -27,22 +27,22 @@ function Index5() {
     "assets/images/client/08.png",
   ];
   return <div className="page-wrapper">
-  <HeroBanner5 />
-  <div class="page-content">
-  <FeatureFurniture />
-  <ProductIndex5 />
-  <FurnitureAds />
-  <CountDownFurniture />
-  <FurnitureAds2 />
-  <BlogSection blogs={filteredBlogs}/>
-  <section>
-    <LogoSection logos={logos} />
-  </section>
+    <HeroBanner5 />
+    <div class="page-content">
+      <FeatureFurniture />
+      <ProductIndex5 />
+      <FurnitureAds />
+      <CountDownFurniture />
+      <FurnitureAds2 />
+      <BlogSection blogs={filteredBlogs} />
+      <section>
+        <LogoSection logos={logos} />
+      </section>
 
 
-   
-  </div>
-</div>;
+
+    </div>
+  </div>;
 }
 
 export default Index5;

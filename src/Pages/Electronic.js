@@ -13,19 +13,19 @@ function Index4() {
     (state) => state.blog.blogItems
   );
   const filteredBlogs = blogs.filter(
-    (blog) => blog.category.includes("Electronic") ).slice(0, 4);
+    (blog) => blog.category.includes("Electronic")).slice(0, 4);
   return <div className="page-wrapper">
-  <HeroBanner4 />
+    <HeroBanner4 />
 
-  <div class="page-content">
-    <ElectronicAd />   
-    <ProductIndex4 />
-    <NewCollection4 />
-    <ElectronicTestimonial />
-    <BlogSection blogs={filteredBlogs} title={"Electronic Blog"}/>
-    <FeatureSection />
-  </div>
-</div>;
+    <div class="page-content">
+      <ElectronicAd />
+      <ProductIndex4 />
+      <NewCollection4 />
+      <ElectronicTestimonial />
+      <BlogSection blogs={filteredBlogs} title={"Electronic Blog"} />
+      <FeatureSection />
+    </div>
+  </div>;
 }
 
 export default Index4;

@@ -23,24 +23,41 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../Components/ProductCard';
 import CustomPagination from '../Components/pagination';
-import ProductCardList from '../Components/Trending/PrductCardList';
+import ProductCardList from '../Components/PrductCardList';
 function PLLS() {
-  const firstBreadcrumb = { label: "Pages"};
+  const firstBreadcrumb = { label: "Pages" };
   const secondBreadcrumb = {
-    label: "Product List Left Sidebar",
+    label: "Shop List Left Sidebar",
     active: true,
   };
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const [selectedOption, setSelectedOption] = useState("1");
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+    setActivePage(1);
+  };
   const allProducts = useSelector((state) => state.products.allProducts);
 
-  const filteredProducts = useSelector(
-    (state) => state.products.filteredProducts
-  );
+  // const filteredProducts = useSelector(
+  //   (state) => state.products.filteredProducts
+  // );
+  const filteredProducts = useSelector((state) => {
+    const option = parseInt(selectedOption);
+    switch (option) {
+      case 1: // Newest Item
+        return state.products.filteredProducts;
+      case 2: // High To Low
+        return state.products.filteredProducts.slice().sort((a, b) => b.price - a.price);
+      case 3: // Low To High
+        return state.products.filteredProducts.slice().sort((a, b) => a.price - b.price);
+      default:
+        return state.products.filteredProducts;
+    }
+  });
   const filters = useSelector((state) => state.products.filters);
 
- 
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
   const [activePage, setActivePage] = useState(1);
@@ -82,16 +99,16 @@ function PLLS() {
   };
   return (
     <div className='page-wrapper'>
-        <Page_Heading
-          title="Shop List Left Sidebar"
-          firstBreadcrumb={firstBreadcrumb}
-          secondBreadcrumb={secondBreadcrumb}
-        />
-        <div className='page-content'>
+      <Page_Heading
+        title="Shop List Left Sidebar"
+        firstBreadcrumb={firstBreadcrumb}
+        secondBreadcrumb={secondBreadcrumb}
+      />
+      <div className='page-content'>
         <section>
-         <Container>
-        <Row>
-        <Col lg={9} md={12} className="order-lg-1">
+          <Container>
+            <Row>
+              <Col lg={9} md={12} className="order-lg-1">
                 <Row className="align-items-center">
                   <Col md="5" className="mb-3 mb-md-0">
                     <CardText tag="span" className="text-muted">
@@ -111,35 +128,35 @@ function PLLS() {
                         <i class="lab la-buromobelexperte"></i>
                       </Link>
                       <Link to="/shop-list-left-sidebar" className="text-dark">
-                      <i class="las la-list"></i>
+                        <i class="las la-list"></i>
                       </Link>
                     </div>
                     <div className="sort-filter ml-2 d-flex align-items-center">
-                      <select class="custom-select" id="inputGroupSelect02">
+                      <select class="custom-select" id="inputGroupSelect02" onChange={handleOptionChange} value={selectedOption}>
                         <option selected>Sort By</option>
                         <option value="1">Newest Item</option>
-                        <option value="2">Populer</option>
-                        <option value="3">Best Match</option>
+                        <option value="2">High To Low</option>
+                        <option value="3">Low To High</option>
                       </select>
                     </div>
                   </Col>
                 </Row>
-              <Row className="text-center">
-                {productsToShow.map((product) => (
-                      <ProductCardList
-                          id={product.id}
-                          imgBackSrc={`assets/images/${product.pictures[0]}`}
-                          imgFrontSrc={`assets/images/${product.pictures[1]}`}
-                          title={product.name}
-                          price={product.salePrice}
-                          actualPrice={product.price}
-                          rating={product.rating}
+                <Row className="text-center">
+                  {productsToShow.map((product) => (
+                    <ProductCardList
+                      id={product.id}
+                      imgBackSrc={`assets/images/${product.pictures[0]}`}
+                      imgFrontSrc={`assets/images/${product.pictures[1]}`}
+                      title={product.name}
+                      price={product.salePrice}
+                      actualPrice={product.price}
+                      rating={product.rating}
 
-                        />
-                ))}
-               
-              </Row>
-              <Row
+                    />
+                  ))}
+
+                </Row>
+                <Row
                   className="mt-5 mb-5"
                   style={{ justifyContent: "center" }}
                 >
@@ -149,14 +166,14 @@ function PLLS() {
                     onPageChange={handlePageChange}
                   />
                 </Row>
-            </Col>
-         <div class="col-lg-3 col-md-12 sidebar mt-8 mt-lg-0">
-            <SideBar />
-         </div>
-         </Row>
-         </Container>
-         </section>
-         </div>
+              </Col>
+              <div class="col-lg-3 col-md-12 sidebar mt-8 mt-lg-0">
+                <SideBar />
+              </div>
+            </Row>
+          </Container>
+        </section>
+      </div>
     </div>
   )
 }

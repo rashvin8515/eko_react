@@ -3,37 +3,37 @@ import { Col, Container, Row } from 'reactstrap'
 
 function HeroBanner5() {
   return (
-   <section className='banner pos-r p-0 mt-5'>
-    <Container>
+    <section className='banner pos-r p-0 mt-5'>
+      <Container>
         <Row className='align-items-center'>
-            <Col lg={3} className='order-lg-1'>
-             <nav class="navbar navbar-expand-lg navbar-light categories d-block shadow-sm">
-          <button class="navbar-toggler d-flex align-items-center text-uppercase" type="button" data-toggle="collapse" data-target="#categoriesDropdown" aria-controls="categoriesDropdown" aria-expanded="false" aria-label="Toggle navigation"> <i class="las la-stream"></i>Categories</button>
-          <div class="collapse navbar-collapse" id="categoriesDropdown">
-            <ul class="navbar-nav d-block w-100">
-              <li class="nav-item"> <a class="nav-link" href="#">Men</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" href="#">Women</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" href="#">Kids</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" href="#">Accessories</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" href="#">Clothing</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" href="#">Bags</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" href="#">Footwear</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" href="#">Watches</a>
-              </li>
-              <li class="nav-item"> <a class="nav-link" href="#">Jewellery</a>
-              </li>
-            </ul>
-          </div>
-                </nav>
-            </Col>
-            <Col lg="9">
+          <Col lg={3} className='order-lg-1'>
+            <nav class="navbar navbar-expand-lg navbar-light categories d-block shadow-sm">
+              <button class="navbar-toggler d-flex align-items-center text-uppercase" type="button" aria-controls="categoriesDropdown" aria-expanded="false" aria-label="Toggle navigation"> <i class="las la-stream"></i>Categories</button>
+              <div class=" navbar-collapse" id="categoriesDropdown">
+                <ul class="navbar-nav d-block w-100">
+                  <li class="nav-item"> <a class="nav-link" href="#">Men</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Women</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Kids</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Accessories</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Clothing</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Bags</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Footwear</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Watches</a>
+                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="#">Jewellery</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </Col>
+          <Col lg="9">
             <Row className="align-items-center">
               <Col lg="5" md="12" className="order-lg-1">
                 <img className="img-fluid" src="assets/images/furniture/hero/01.png" alt="" />
@@ -55,8 +55,8 @@ function HeroBanner5() {
             </Row>
           </Col>
         </Row>
-    </Container>
-   </section>
+      </Container>
+    </section>
   )
 }
 

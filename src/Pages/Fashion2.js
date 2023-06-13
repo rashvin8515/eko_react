@@ -39,18 +39,18 @@ function Index2() {
     (blog) => blog.category.includes("Cloth") || blog.category.includes("Fashion")
   ).slice(0, 4);
   return <div className="page-wrapper">
-<HeroBanner2 />
-  <div class="page-content">
-    
-<ProductIndex2 />
-<Section2 />
-<FeatureIndex2 feature={feature} />
-<NewCollection2 />
-<Countdown2 />
-<BlogSection blogs={filteredBlogs} title={"Fashion Blog"} />
-<InstagramSection />
-  </div>
-</div>;
+    <HeroBanner2 />
+    <div class="page-content">
+
+      <ProductIndex2 />
+      <Section2 />
+      <FeatureIndex2 feature={feature} />
+      <NewCollection2 />
+      <Countdown2 />
+      <BlogSection blogs={filteredBlogs} title={"Fashion Blog"} />
+      <InstagramSection />
+    </div>
+  </div>;
 }
 
 export default Index2;

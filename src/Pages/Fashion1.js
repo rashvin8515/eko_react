@@ -34,39 +34,38 @@ export default function Index() {
       description: "Writing result-oriented",
     },
   ];
-  
-const logos = [
-  "assets/images/client/01.png",
-  "assets/images/client/02.png",
-  "assets/images/client/03.png",
-  "assets/images/client/04.png",
-  "assets/images/client/05.png",
-  "assets/images/client/06.png",
-  "assets/images/client/07.png",
-  "assets/images/client/08.png",
-];
-const blogs = useSelector(
-  (state) => state.blog.blogItems
-);
-const filteredBlogs = blogs.filter(
-  (blog) => blog.category.includes("Cloth") || blog.category.includes("Fashion")
-).slice(0, 4);
+
+  const logos = [
+    "assets/images/client/01.png",
+    "assets/images/client/02.png",
+    "assets/images/client/03.png",
+    "assets/images/client/04.png",
+    "assets/images/client/05.png",
+    "assets/images/client/06.png",
+    "assets/images/client/07.png",
+    "assets/images/client/08.png",
+  ];
+  const blogs = useSelector(
+    (state) => state.blog.blogItems
+  );
+  const filteredBlogs = blogs.filter(
+    (blog) => blog.category.includes("Cloth") || blog.category.includes("Fashion")
+  ).slice(0, 4);
 
 
   return (
     <div className="page-wrapper">
       <BannerSliderIndex />
       <div class="page-content">
-
         <FeatureIndex feature={feature} />
         <ProductIndex />
         <CountDown />
         <NewCollection />
-<Section />
-<NewsletterSection />
-<LogoSection logos={logos} />
-<BlogSection blogs={filteredBlogs} title={"Fashion Blog"}/>
-<InstagramSection />
+        <Section />
+        <NewsletterSection />
+        <LogoSection logos={logos} />
+        <BlogSection blogs={filteredBlogs} title={"Fashion Blog"} />
+        <InstagramSection />
       </div>
     </div>
   );

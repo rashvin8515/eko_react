@@ -28,19 +28,19 @@ function Index3() {
     (blog) => blog.category.includes("Cloth") || blog.category.includes("Fashion")
   ).slice(0, 4);
   return <div className="page-wrapper">
-  <HeroBanner3 />
+    <HeroBanner3 />
 
-  <div class="page-content">
-<ProductIndex3 />
-    {/* <FeatureIndex feature={feature} /> */}
-    <CountDown3 />
-    <NewCollection3 />
-    <ProductAds />
-    <LogoSection2 logos={logos}/>
-<BlogSection blogs={filteredBlogs} title={"Fashion Blog"}/>
-<InstagramSection />
-  </div>
-</div>;
+    <div class="page-content">
+      <ProductIndex3 />
+      {/* <FeatureIndex feature={feature} /> */}
+      <CountDown3 />
+      <NewCollection3 />
+      <ProductAds />
+      <LogoSection2 logos={logos} />
+      <BlogSection blogs={filteredBlogs} title={"Fashion Blog"} />
+      <InstagramSection />
+    </div>
+  </div>;
 }
 
 export default Index3;
